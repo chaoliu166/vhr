@@ -28,7 +28,8 @@ public class LoginController {
     }
 
     @GetMapping("/verifyCode")
-    public void verifyCode(HttpServletRequest request, HttpServletResponse resp) throws IOException {
+    public void verifyCode(HttpServletRequest request, HttpServletResponse resp)
+            throws IOException {
         VerificationCode code = new VerificationCode();
         BufferedImage image = code.getImage();
         String text = code.getText();

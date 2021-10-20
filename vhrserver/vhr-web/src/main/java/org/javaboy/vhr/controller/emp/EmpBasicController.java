@@ -38,7 +38,9 @@ public class EmpBasicController {
     DepartmentService departmentService;
 
     @GetMapping("/")
-    public RespPageBean getEmployeeByPage(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "10") Integer size, Employee employee, Date[] beginDateScope) {
+    public RespPageBean getEmployeeByPage(@RequestParam(defaultValue = "1") Integer page,
+                                          @RequestParam(defaultValue = "10") Integer size,
+                                          Employee employee, Date[] beginDateScope) {
         return employeeService.getEmployeeByPage(page, size, employee,beginDateScope);
     }
 
@@ -106,7 +108,11 @@ public class EmpBasicController {
 
     @PostMapping("/import")
     public RespBean importData(MultipartFile file) throws IOException {
-        List<Employee> list = POIUtils.excel2Employee(file, nationService.getAllNations(), politicsstatusService.getAllPoliticsstatus(), departmentService.getAllDepartmentsWithOutChildren(), positionService.getAllPositions(), jobLevelService.getAllJobLevels());
+        List<Employee> list = POIUtils.excel2Employee(file, nationService.getAllNations(),
+                politicsstatusService.getAllPoliticsstatus(),
+                departmentService.getAllDepartmentsWithOutChildren(),
+                positionService.getAllPositions(),
+                jobLevelService.getAllJobLevels());
         if (employeeService.addEmps(list) == list.size()) {
             return RespBean.ok("上传成功");
         }

@@ -54,7 +54,7 @@
             <if test="id != null">
                 id,
             </if>
-            <if test="basicSalary != null"> 4
+            <if test="basicSalary != null">
                 basicSalary,
             </if>
             <if test="bonus != null">

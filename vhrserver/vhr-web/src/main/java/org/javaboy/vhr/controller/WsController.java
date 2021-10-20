@@ -22,6 +22,7 @@ public class WsController {
         chatMsg.setFrom(hr.getUsername());
         chatMsg.setFromNickname(hr.getName());
         chatMsg.setDate(new Date());
-        simpMessagingTemplate.convertAndSendToUser(chatMsg.getTo(), "/queue/chat", chatMsg);
+        simpMessagingTemplate.convertAndSendToUser(chatMsg.getTo(),
+                "/queue/chat", chatMsg);
     }
 }

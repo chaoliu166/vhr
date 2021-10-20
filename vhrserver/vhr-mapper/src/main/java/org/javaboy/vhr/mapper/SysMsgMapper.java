@@ -15,3 +15,4 @@ public interface SysMsgMapper {
 
     int updateByPrimaryKey(SysMsg record);
 }
+

@@ -17,6 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitConfig {
     public final static Logger logger = LoggerFactory.getLogger(RabbitConfig.class);
+
     @Autowired
     CachingConnectionFactory cachingConnectionFactory;
     @Autowired
@@ -29,7 +30,7 @@ public class RabbitConfig {
             String msgId = data.getId();
             if (ack) {
                 logger.info(msgId + ":消息发送成功");
-                mailSendLogService.updateMailSendLogStatus(msgId, 1);//修改数据库中的记录，消息投递成功
+                mailSendLogService. updateMailSendLogStatus(msgId, 1);//修改数据库中的记录，消息投递成功
             } else {
                 logger.info(msgId + ":消息发送失败");
             }

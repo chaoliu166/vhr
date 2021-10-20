@@ -14,7 +14,8 @@ spring:
     host: 127.0.0.1
     database: 0
     port: 6379
-    password: 123
+    password: 123456
+    timeout: 5000
   cache:
     cache-names: menus_cache
 server:

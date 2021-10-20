@@ -14,4 +14,5 @@ public interface MailSendLogMapper {
     List<MailSendLog> getMailSendLogsByStatus();
 
     Integer updateCount(@Param("msgId") String msgId, @Param("date") Date date);
+
 }
